@@ -41,3 +41,7 @@ def post_plot(**kwargs):
     if show:
         plt.show()
 
+def plot_hook(plot_func,**plot_kw):
+    kwargs = pre_plot(**plot_kw)
+    plot_func()
+    post_plot(**kwargs)
