@@ -6,7 +6,6 @@ from .datasets import (
     DataSet,
     dump_datasets,
     is_datasets_exists,
-    DataSetNotAlreadyError,
 )
 from .transformer import KTransformer
 
@@ -34,7 +33,3 @@ __all__ += _submodules
 
 def list_environs():
     return ("MYLIB_DATASETS_DIR",)
-
-
-if not is_datasets_exists():
-    logger.warning(DataSetNotAlreadyError.__doc__)

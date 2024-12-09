@@ -25,7 +25,6 @@ def setup_environ():
     if not is_datasets_exists():
         dump_datasets(TEST_DATASETS_DIR)
 
-
 @pytest.mark.parametrize("data_dir", [None, TEST_DATASETS_DIR])
 @pytest.mark.parametrize("ds", [ds for ds in DataSet])
 def test_load_dataset(ds, data_dir, setup_environ):
@@ -34,6 +33,9 @@ def test_load_dataset(ds, data_dir, setup_environ):
             pytest.skip()
         os.environ["MYLIB_DATASETS_DIR"] = str(TEST_DATASETS_DIR)
     df = load_dataset(ds)
+    assert (df.columns == ["value"]).all()
+    assert not df.loc[:, "value"].isna().any()
+    df = ds.load_dataset()
     assert (df.columns == ["value"]).all()
     assert not df.loc[:, "value"].isna().any()
 
@@ -102,3 +104,4 @@ def test_get_datasets_dir():
     if is_datasets_exists(TEST_DATASETS_DIR):
         os.environ["MYLIB_DATASETS_DIR"] = str(TEST_DATASETS_DIR.resolve())
         assert get_datasets_dir().samefile(TEST_DATASETS_DIR)
+

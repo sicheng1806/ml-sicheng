@@ -33,6 +33,9 @@ class DataSet(enum.Enum):
     WindPower = "W1_power"
     WindVelocity = "W1_velocity"
 
+    def load_dataset(self):
+        return load_dataset(self)
+
 
 def _get_datasets_dir() -> Path:
     datasets_dir = os.environ.get("MYLIB_DATASETS_DIR")
