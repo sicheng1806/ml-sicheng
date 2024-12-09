@@ -4,9 +4,9 @@
 
 ### 1. 准备数据集
 
-首先需要从[hf://datasets/sicheng1806/New-energy-power-plant/](https://huggingface.co/datasets/sicheng1806/New-energy-power-plant) 下载数据集至`dataset/csv`文件夹,如下:
+首先需要从[hf://datasets/sicheng1806/New-energy-power-plant/](https://huggingface.co/datasets/sicheng1806/New-energy-power-plant) 下载数据集至`src/mylib/dataset`文件夹下,如下:
 ```sh
-dataset
+src/mylib/dataset
 ├── S1.csv
 ├── W1_power.csv
 └── W1_velocity.csv

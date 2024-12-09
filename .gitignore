@@ -26,3 +26,6 @@ wheels/
 .tmp/
 coverage.xml
 /.coverage
+
+*.csv.zip
+*.gz
