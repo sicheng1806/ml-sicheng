@@ -8,13 +8,13 @@ authors = [
 ]
 requires-python = ">=3.10"
 dependencies = [
-    "keras>=3.7.0",
     "matplotlib",
     "numpy",
     "pandas",
-    "pywavelets>=1.8.0",
+    "pywavelets",
     "scikit-learn",
-    "seaborn",
+    "jax",
+    "keras"
 ]
 
 [project.scripts]
@@ -31,6 +31,7 @@ notebook = [
 dev = [
     "pytest>=8.3.4",
     "requests>=2.32.3",
+    "seaborn",
 ]
 
 # tool

@@ -1,0 +1,15 @@
+{
+  "id": "sicheng1806/lstm-new-energy-plant",
+  "title": "lstm-new-energy-plant",
+  "code_file": "lstm-new-energy-plant.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": ["sicheng1806/new-energy-plant"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
