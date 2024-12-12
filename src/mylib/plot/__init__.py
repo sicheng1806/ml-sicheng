@@ -2,19 +2,9 @@
 
 import matplotlib.pyplot as plt
 from pathlib import Path
+from mylib.kaggle import iskaggle
 
-__all__ = ["set_rcParams", "post_plot"]
-
-rc_keys = [k.split(".")[-1] for k in plt.rcParams.keys()]
-
-
-def set_rcParams(rc_params={}, **kwargs):
-    kwargs |= rc_params
-    for k, v in kwargs.items():
-        if "." in k:
-            plt.rcParams[k] = v
-        k = list(plt.rcParams.keys())[rc_keys.index(k)]
-        plt.rcParams[k] = v
+__all__ = ["post_plot"]
 
 
 def post_plot(**kwargs):
@@ -25,7 +15,13 @@ def post_plot(**kwargs):
         img_dir = Path(img_dir)
         if not img_dir.exists():
             img_dir.mkdir()
-        title = plt.gcf().get_suptitle()
+        # matplotlib version diff 
+        if not iskaggle():
+            title = plt.gcf().get_suptitle()
+        else:
+            title = plt.gcf()._suptitle 
+            if title is not None:
+                title = title.get_text()
         if not title:
             title = plt.gca().get_title()
         if title:

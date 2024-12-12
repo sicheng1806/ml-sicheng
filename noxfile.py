@@ -61,4 +61,15 @@ def lint(session: nox.Session):
         "ruff",
         "format",
     )
-    session.run("ruff", "check", "--fix", "--exclude", "notebook")
+    session.run(
+        "ruff",
+        "check",
+        "--fix",
+    )
+
+
+@nox.session(reuse_venv=True, name="tar-lib")
+def tar_lib(session: nox.Session):
+    tar_options = ["--exclude=__pycache__", "--exclude=tests", "-C", "src"]
+    tar_cmd = ["tar", "-zcvf", "datasets/sicheng-ml-lib/mylib.tar.gz"] + tar_options + ["mylib"]
+    session.run(*tar_cmd, external=True)

@@ -1,0 +1,15 @@
+{
+  "id": "sicheng1806/linear-exercise",
+  "title": "linear exercise",
+  "code_file": "linear_exercise.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": ["ryanholbrook/ts-course-data","sicheng1806/sicheng-ml-lib"],
+  "competition_sources": ["competitions/store-sales-time-series-forecasting"],
+  "kernel_sources": [],
+  "model_sources": []
+}

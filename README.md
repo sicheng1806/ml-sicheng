@@ -2,17 +2,17 @@
 
 ## 开始之前
 
-### 1. 准备数据集
+### 1. 项目的数据集
 
-首先需要从[hf://datasets/sicheng1806/New-energy-power-plant/](https://huggingface.co/datasets/sicheng1806/New-energy-power-plant) 下载数据集至`dataset/data`文件夹下,如下:
-```sh
-dataset/data
-├── S1.csv
-├── W1_power.csv
-└── W1_velocity.csv
+项目的数据集已经作为公共数据集上传至[kaggle](https://www.kaggle.com)和[huggingface-hub](https://huggingface.co/). 可以根据`sicheng1806/new-energy-plant`搜索。
+
+此外更直接的方法是使用此项目的`python`库`mylib`:
+```python
+from mylib.new_energy_plant import Dataset
+df = Dataset.Solar.load_dataframe()
+df.head()
 ```
-
-也可以从`hugging-face`的镜像网站上下载[hf-mirror](https://hf-mirror.com/)。
+初次使用时数据会下载至本地的`kagglehub`缓存目录:`~/.cache/kagglehub`
 
 ### 2. 项目结构
 
@@ -41,5 +41,5 @@ dataset/data
 
 - `nox -s lint` 代码格式检查
 - `nox -s clean` 输出文件清理
-- `kaggle kernels push -k notebook\< your-kaggle-kernel-path >` 将项目推送到kaggle并运行，需要密钥。
-- `kaggle kernels output sicheng1806/lstm-new-energy-plant -p output/` 将kaggle kernel 运行结果下载到本地。 
+- `kaggle kernels push -k notebook\<path-to-kaggle-kernel>` 将项目推送到kaggle并运行，需要密钥。
+- `kaggle kernels output <kernel-handle> -p output/` 将kaggle kernel 运行结果下载到本地。 
