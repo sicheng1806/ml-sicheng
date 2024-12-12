@@ -19,7 +19,7 @@
 - [kaggle](https://www.kaggle.com)
 - [huggingface-hub](https://huggingface.co/)
 
-### 1. [新能源电厂数据集](datasets/new-energy-plant/README.md)
+### 1. [新能源电厂数据集](docs/datasets/new-energy-plant.md)
 
 - 上传至`kaggle`和`huggingface-hub`
 - 关键词为`sicheng1806/new-energy-plant`
