@@ -70,6 +70,16 @@ def lint(session: nox.Session):
 
 @nox.session(reuse_venv=True, name="tar-lib")
 def tar_lib(session: nox.Session):
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-v",
+        "--version",
+        type=str,
+        default="",
+        help="the version of the lib"
+    )
+    args = parser.parse_args(session.posargs)
     tar_options = ["--exclude=__pycache__", "--exclude=tests", "-C", "src"]
-    tar_cmd = ["tar", "-zcvf", "datasets/sicheng-ml-lib/mylib.tar.gz"] + tar_options + ["mylib"]
+    fname = "ml_sicheng.tar.gz" if not args.version else f"ml_sicheng-{args.version}.tar.gz"
+    tar_cmd = ["tar", "-zcvf", f"datasets/ml_sicheng/{fname}"] + tar_options + ["ml_sicheng"]
     session.run(*tar_cmd, external=True)

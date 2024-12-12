@@ -1,6 +1,6 @@
 # 新能源电厂调度问题的数学模型求解
 
-这是为研究新能源电厂调度问题而创建的项目。项目维护一个个人的机器学习库`ml-learn`。并对相关的机器学习问题进行研究和解答。 
+这是为研究新能源电厂调度问题而创建的项目。项目维护一个个人的机器学习库`ml-learn`。并对相关的机器学习问题进行研究和解答。
 
 ## 项目结构
 
@@ -32,38 +32,38 @@
 ## 如何安装`ml-learn`
 
 :::{warning}
-由于该项目属于个人项目，很不成熟，因此不会正式发布在`pypi`上，个人用于在`kaggle`上快速部署工具,请不要轻易安装在系统的python环境上，尽管其不会修改任何系统文件。
+由于该项目属于个人项目，很不成熟，因此不会正式发布在`pypi`上，个人用于在`kaggle`上快速部署工具,请不要轻易安装在**系统的python环境**上，尽管其不会修改任何系统文件。
 :::
 
 ### wheel
 
-从[Release](https://github.com/sicheng1806/modeling-new-energy-power-plant-scheduling-problem)页面下载最新的`.whl`,之后通过`pip`安装:
+- `.whl`文件位于[Release](https://github.com/sicheng1806/ml-sicheng/release)页面.
+- 通过`pip`安装:
 ```sh
-pip install /path/to/wheel/file
+pip install /path-or-url/to/wheel/file
 ```
 
 :::{note}
 该来源的发布较为及时，同步于标签号。
 :::
 
-
 ### TestPypi
-
-:::{note}
-该来源的发布同步于版本号。
-:::
 
 ```sh
 pip install -i https://test.pypi.org/simple/ ml-sicheng
 ```
 
-### Kaggle Dataset
-
 :::{note}
-为方便在Kaggle上使用也作为数据集发布在Kaggle上，但是由于版本更新过快，不会保证此数据集及时更新。
+该来源的发布同步于版本号。
 :::
 
+### Kaggle Dataset
+
 搜索`sicheng1806/ml-learn`以加入Kaggle输入。
+
+:::{note}
+该数据库直接链接至github的release页面.
+:::
 
 ## 项目开发
 
