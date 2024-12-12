@@ -29,3 +29,8 @@ coverage.xml
 
 *.csv.zip
 *.gz
+
+# output
+
+/output/imgs/data-view/
+/output/imgs/tests/
