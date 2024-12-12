@@ -2,7 +2,7 @@
 
 import matplotlib.pyplot as plt
 from pathlib import Path
-from mylib.kaggle import iskaggle
+from ml_sicheng.kaggle import iskaggle
 
 __all__ = ["post_plot"]
 

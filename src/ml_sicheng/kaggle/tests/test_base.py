@@ -1,6 +1,6 @@
 import pandas as pd
 
-from mylib.kaggle import kaggle_datasets
+from ml_sicheng.kaggle import kaggle_datasets
 
 handles = ["uciml/iris", "competitions/store-sales-time-series-forecasting"]
 

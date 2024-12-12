@@ -4,7 +4,7 @@ os.environ["KERAS_BACKEND"] = "jax"
 import numpy as np
 from numpy.lib.stride_tricks import sliding_window_view
 
-from mylib.models.lstm import SimpleLSTMRegression
+from ml_sicheng.models.lstm import SimpleLSTMRegression
 
 
 def test_simple_LSTM_regression():

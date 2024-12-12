@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 import shutil
 
-from mylib.plot import post_plot
+from ml_sicheng.plot import post_plot
 
 
 IMG_DIR = Path("output/imgs/tests")

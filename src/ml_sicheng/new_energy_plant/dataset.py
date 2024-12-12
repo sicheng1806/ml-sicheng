@@ -1,7 +1,7 @@
 import enum
 import pandas as pd
 
-from mylib.kaggle import kaggle_datasets
+from ml_sicheng.kaggle import kaggle_datasets
 
 
 class DataSet(enum.Enum):

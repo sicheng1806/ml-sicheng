@@ -1,6 +1,6 @@
 [project]
-name = "mylib"
-version = "0.1.0"
+name = "ml-sicheng"
+version = "0.1.2"
 description = "Add your description here"
 readme = "README.md"
 authors = [
@@ -8,12 +8,11 @@ authors = [
 ]
 requires-python = ">=3.10"
 dependencies = [
-    "matplotlib>=3.9.2",
+    "matplotlib",
     "numpy",
     "pandas",
     "pywavelets",
     "scikit-learn",
-    "jax",
     "keras",
     "kagglehub",
 ]
@@ -34,19 +33,26 @@ dev = [
     "pytest>=8.3.4",
     "requests>=2.32.3",
     "seaborn",
+    "jax",
 ]
 
-# tool
+# uv 
 
 [tool.uv]
-default-groups = ["dev","notebook",]
+default-groups = ["dev","notebook"]
+publish-url = "https://test.pypi.org/legacy/"
 
+[[tool.uv.index]]
+name = "tuna-mirror"
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
+explicit = true
 
-[tool.uv.workspace]
-exclude = []
+# pytest
 
 [tool.pytest.ini_options]
 addopts = "-s"
+
+# ruff 
 
 [tool.ruff.lint.per-file-ignores]
 "*.ipynb" = ["E402"]

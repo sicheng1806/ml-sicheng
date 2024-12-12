@@ -4,7 +4,7 @@ os.environ["KERAS_BACKEND"] = "jax"
 
 import keras
 
-from mylib.models.vae import VariationalAutoEncoder
+from ml_sicheng.models.vae import VariationalAutoEncoder
 
 
 def test_vae():

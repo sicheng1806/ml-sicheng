@@ -3,7 +3,7 @@ import logging
 from .plot import post_plot
 from .kaggle import kaggle_datasets, iskaggle
 
-__version__ = "0.1.0"
+__version__ =  "0.1.2"
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)

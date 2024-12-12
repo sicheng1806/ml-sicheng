@@ -1,20 +1,8 @@
-# 新能源电厂调度问题
+# 新能源电厂调度问题的数学模型求解
 
-## 开始之前
+这是为研究新能源电厂调度问题而创建的项目。项目维护一个个人的机器学习库`ml-learn`。并对相关的机器学习问题进行研究和解答。 
 
-### 1. 项目的数据集
-
-项目的数据集已经作为公共数据集上传至[kaggle](https://www.kaggle.com)和[huggingface-hub](https://huggingface.co/). 可以根据`sicheng1806/new-energy-plant`搜索。
-
-此外更直接的方法是使用此项目的`python`库`mylib`:
-```python
-from mylib.new_energy_plant import Dataset
-df = Dataset.Solar.load_dataframe()
-df.head()
-```
-初次使用时数据会下载至本地的`kagglehub`缓存目录:`~/.cache/kagglehub`
-
-### 2. 项目结构
+## 项目结构
 
 - `scr/mylib` 此项目创建的临时性的库，可以在虚拟环境下使用.
 - `scripts` 项目的脚本文件，与虚拟环境脱钩，用于完成一些一次性的准备过程。 
@@ -23,23 +11,77 @@ df.head()
 - `ref` 参考文件
 - `docs` 项目文档
 
-### 3. 项目工具
+## 数据集
+
+项目的数据集会发布在`kaggle`或`huggingface-hub` 平台上。此外可以直接通过项目的`python`库`ml_learn`中的相关函数进行使用。
+
+数据集平台:
+- [kaggle](https://www.kaggle.com)
+- [huggingface-hub](https://huggingface.co/)
+
+### 1. [新能源电厂数据集](datasets/new-energy-plant/README.md)
+
+- 上传至`kaggle`和`huggingface-hub`
+- 关键词为`sicheng1806/new-energy-plant`
+- 直接使用`ml-learn`的调用:
+    ```py
+    from ml_learn.new_energy_plant import Dataset
+    df = DataSet.Solar.load_dataframe() # return a pandas DataFrame
+    ```
+
+## 如何安装`ml-learn`
+
+:::{warning}
+由于该项目属于个人项目，很不成熟，因此不会正式发布在`pypi`上，个人用于在`kaggle`上快速部署工具,请不要轻易安装在系统的python环境上，尽管其不会修改任何系统文件。
+:::
+
+### wheel
+
+从[Release](https://github.com/sicheng1806/modeling-new-energy-power-plant-scheduling-problem)页面下载最新的`.whl`,之后通过`pip`安装:
+```sh
+pip install /path/to/wheel/file
+```
+
+:::{note}
+该来源的发布较为及时，同步于标签号。
+:::
+
+
+### TestPypi
+
+:::{note}
+该来源的发布同步于版本号。
+:::
+
+```sh
+pip install -i https://test.pypi.org/simple/ ml-sicheng
+```
+
+### Kaggle Dataset
+
+:::{note}
+为方便在Kaggle上使用也作为数据集发布在Kaggle上，但是由于版本更新过快，不会保证此数据集及时更新。
+:::
+
+搜索`sicheng1806/ml-learn`以加入Kaggle输入。
+
+## 项目开发
+
+### 开发工具
 
 项目并无严格的依赖，因为本身是由虚拟环境进行管理的，但是一些功能需要具有本地工具来进行管理:
 - 虚拟环境管理工具: [uv](https://github.com/astral-sh/uv)
 - 自动化管理工具: [nox](https://github.com/wntrblm/nox)
 - kaggle交互工具: [kaggle-cli](https://www.kaggle.com/docs/api)
 
-## 项目开发
-
-### 如何运行
+### 虚拟环境管理
 
 1. 初次clone项目后请使用`uv sync` 来安装python虚拟环境.
-2. 同步虚拟环境后在`notebook\*`中使用此虚拟环境运行即可,一般为于`.venv\bin\python`.
+2. 同步虚拟环境后在`notebook/*`中使用此虚拟环境运行即可,一般为于`.venv/bin/python`.
 
 ### 自动化工具
 
 - `nox -s lint` 代码格式检查
 - `nox -s clean` 输出文件清理
-- `kaggle kernels push -k notebook\<path-to-kaggle-kernel>` 将项目推送到kaggle并运行，需要密钥。
+- `kaggle kernels push -k notebook/<path-to-kaggle-kernel>` 将项目推送到kaggle并运行，需要密钥。
 - `kaggle kernels output <kernel-handle> -p output/` 将kaggle kernel 运行结果下载到本地。 

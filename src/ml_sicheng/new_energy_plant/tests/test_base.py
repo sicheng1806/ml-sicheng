@@ -1,7 +1,7 @@
 import pytest
 import numpy as np
-from mylib.new_energy_plant.transformer import KTransformer, EventClassifier
-from mylib.new_energy_plant.dataset import DataSet
+from ml_sicheng.new_energy_plant.transformer import KTransformer, EventClassifier
+from ml_sicheng.new_energy_plant.dataset import DataSet
 
 
 def test_dataset():
