@@ -15,11 +15,11 @@ def post_plot(**kwargs):
         img_dir = Path(img_dir)
         if not img_dir.exists():
             img_dir.mkdir()
-        # matplotlib version diff 
+        # matplotlib version diff
         if not iskaggle():
             title = plt.gcf().get_suptitle()
         else:
-            title = plt.gcf()._suptitle 
+            title = plt.gcf()._suptitle
             if title is not None:
                 title = title.get_text()
         if not title:

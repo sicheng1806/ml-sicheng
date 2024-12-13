@@ -1,14 +1,14 @@
 [project]
 name = "ml-sicheng"
-version = "0.1.1-alpha"
 description = "Add your description here"
 readme = "README.md"
 authors = [
     { name = "sicheng1806", email = "sicheng1806@outlook.com" }
 ]
 requires-python = ">=3.10"
-dependencies = [
-    "matplotlib",
+dynamic = ["version"]
+
+dependencies = ["matplotlib",
     "numpy",
     "pandas",
     "pywavelets",
@@ -16,13 +16,6 @@ dependencies = [
     "keras",
     "kagglehub",
 ]
-
-[project.scripts]
-
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
 
 [dependency-groups]
 notebook = [
@@ -36,7 +29,29 @@ dev = [
     "jax",
 ]
 
-# uv 
+[project.scripts]
+
+######################################
+##             Build                ##
+######################################
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/ml_sicheng/__about__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src/ml_sicheng",
+    "/pyproject.toml",
+    "/README.md"
+]
+
+######################################
+##             Tools                ##
+######################################
 
 [tool.uv]
 default-groups = ["dev","notebook"]
@@ -47,12 +62,8 @@ name = "tuna-mirror"
 url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
 explicit = true
 
-# pytest
-
 [tool.pytest.ini_options]
 addopts = "-s"
-
-# ruff 
 
 [tool.ruff.lint.per-file-ignores]
 "*.ipynb" = ["E402"]

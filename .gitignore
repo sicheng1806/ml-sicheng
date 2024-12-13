@@ -17,7 +17,7 @@ wheels/
 # Cache
 .pytest_*
 .ruff_*
-
+.mypy_*
 # Editor
 .vscode
 

@@ -1,3 +1,9 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "pandas",
+# ]
+# ///
 import pandas as pd
 from pathlib import Path
 
