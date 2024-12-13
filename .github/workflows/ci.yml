@@ -45,6 +45,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: sicheng1806/ml-sicheng
   Release:
+    if: startsWith(github.ref, 'refs/tags/v')
     needs: Lint-and-Test
     permissions:
       contents: write
@@ -67,8 +68,8 @@ jobs:
           uv build
       - name: Release
         uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/v')
         with:
           body: 不稳定且不断替换的测试版本
           files: ${{ github.workspace }}/dist/*
           prerelease: true
+          draft: false
