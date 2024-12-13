@@ -5,6 +5,10 @@ on:
         branches:
             - main
 
+env:
+  KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+  KAGGLE_TOKEN: ${{ secrets.KAGGLE_TOKEN }}
+
 jobs:
     lint-and-test:
         runs-on: ${{ matrix.os }}
