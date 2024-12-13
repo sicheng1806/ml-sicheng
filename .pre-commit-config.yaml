@@ -20,5 +20,6 @@ repos:
       - id: check-json
       - id: check-merge-conflict
       - id: check-symlinks
+      - id: check-toml
 
 exclude: '^datasets/.*$'
