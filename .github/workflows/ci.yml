@@ -45,7 +45,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: sicheng1806/ml-sicheng
   Release:
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: startsWith(github.event.ref, 'refs/tags/v')
     needs: Lint-and-Test
     permissions:
       contents: write
