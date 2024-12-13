@@ -2,8 +2,10 @@ import pytest
 import numpy as np
 from ml_sicheng.new_energy_plant.transformer import KTransformer, EventClassifier
 from ml_sicheng.new_energy_plant.dataset import DataSet
+from ml_sicheng.kaggle import iskaggle
 
 
+@pytest.mark.skipif(not iskaggle(), reason="The Dataset is too large")
 def test_dataset():
     for ds in DataSet:
         df = ds.load_dataframe()

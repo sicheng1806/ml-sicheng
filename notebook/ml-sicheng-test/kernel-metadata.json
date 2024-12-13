@@ -1,0 +1,15 @@
+{
+  "id": "sicheng1806/ml-sicheng-test-in-kaggle",
+  "title": "ml-sicheng-test-in-kaggle",
+  "code_file": "test_kaggle.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": ["sicheng1806/ml-sicheng","sicheng1806/new-energy-plant","uciml/iris"],
+  "competition_sources": ["store-sales-time-series-forecasting"],
+  "kernel_sources": [],
+  "model_sources": []
+}

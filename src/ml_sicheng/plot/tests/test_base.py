@@ -4,9 +4,13 @@ import pytest
 import shutil
 
 from ml_sicheng.plot import post_plot
+from ml_sicheng import iskaggle
 
 
-IMG_DIR = Path("output/imgs/tests")
+IMG_DIR = (
+    Path("output/imgs/tests") if not iskaggle() else Path("/kaggle/working/imgs/tests")
+)
+IMG_DIR.mkdir(exist_ok=True, parents=True)
 kwargs = dict(img_dir=IMG_DIR, save=True, show=False)
 
 
