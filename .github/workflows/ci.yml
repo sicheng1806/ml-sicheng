@@ -32,8 +32,8 @@ jobs:
                 uv sync --all-extras --dev
             - name: Run ruff for code lint and format
               run: |
-                ruff format
-                ruff check --fix
+                uv run ruff format
+                uv run ruff check --fix
             - name: Run pytest include codecov
               run: |
                 uv run pytest --cov --cov-report=xml
